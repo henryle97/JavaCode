@@ -1,0 +1,28 @@
+Xây dựng một chương trình “Quản lý sinh viên” với Java bằng cách xây dựng các lớp sau:
+SinhVien.java
+-	Gồm các instance variable masv, hoten, gioitinh, diemtoan, diemly, diemhoa với các kiểu dữ liệu phù hợp
+-	Xây dựng các constructor không tham số (mặc định) và có tham số.
+-	Xây dựng các phương thức set/get cho từng biến.
+-	Xây dựng các phương thức inputSinhVien/displaySinhVien để nhập và hiển thị thông tin về sinh viên
+
+SinhVienTest.java 
+-	Đây là một main class.
+-	Chương trình được tổ chức theo hệ thống menu chức năng như sau:
+
+1. Nhập một sinh viên mới.
+2. Xem danh sách sinh viên.
+3. Sắp xếp danh sách theo thứ tự tăng dần theo tongdiem 
+4. Kiểm tra xem danh sách đã sắp xếp theo tongdiem hay chưa.
+5. Tìm kiếm tuyến tính theo tongdiem.
+6. Sửa tên sinh viên có mã được nhập từ bàn phím.
+7. Xóa sinh viên có masv = xMasv (nhập từ bàn phím).
+8. Chèn một sinh viên vào danh sách đã sắp xếp sao tính sắp xếp vẫn được bảo tồn. 
+0. Kết thúc.
+
+Hãy khai báo một mảng đối tượng objSinhVien để lưu danh sách các sinh viên. Mảng có cỡ cực đại là max được định nghĩa trước (ví dụ final int max = 100). Biến nguyên count chỉ số sinh viên hiện có trong mảng (ban đầu count = 0, tức là mảng còn rỗng).
+
+Chú ý:
+-	tongdiem = diemtoan + diemly + diemhoa
+-	Sử dụng các khối try… catch và assertion hợp lý để quản lý các exception có thể xảy ra đối với dữ liệu nhập vào bởi người dùng.
+-	Viết một phương thức checkSinhVien trong lớp SinhVienTest với tham số đầu vào là masv để kiểm tra xem một mã sinh viên đã tồn tại trong danh sách hay chưa. Phương thức trả về true nếu đã tồn tại, false nếu chưa. Sử dụng phương thức này trong các chức năng nếu cần.
+-	Các chức năng có thể được thực hiện trực tiếp trong các mục chọn của menu hoặc viết các phương thức tương ứng trong lớp SinhVienTest rồi gọi các phương thức ứng với từng chức năng.

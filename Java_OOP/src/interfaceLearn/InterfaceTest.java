@@ -12,12 +12,16 @@ public class InterfaceTest {
 		AnotherClient ob = new AnotherClient();
 		c = ob;		// c now refer to AnotherClient object
 		c.callback(50);
+		c.getString();
 		
 		// c vẫn k thể gọi c.nonIfaceMeth() vì c thuộc kiểu Callback object
 		
 		IncompleteInherit ob2 = new IncompleteInherit();
 		ob2.callback(55);
 		ob2.callme();
+		
+		ob2.getString();
+		
 		
 	}
 	

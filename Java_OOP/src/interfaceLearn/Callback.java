@@ -6,4 +6,10 @@ package interfaceLearn;
  */
 public interface Callback {
 	void callback(int param);
+	
+	//default method 
+	default void getString()
+	{
+		System.out.println("Default String");
+	}
 }

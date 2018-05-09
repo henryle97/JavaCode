@@ -1,0 +1,18 @@
+Interface : 
+- KHÔNG là class, "Interfaces are contracts for what a class can do"
+- Chỉ bao gồm các hàm 
+- Chỉ định phải làm gì  >< Abstract class : what is class (thuộc tính)
+- Syntax: <access> Interface <ten_class> 
+	+ access :mặc định chỉ trong gói 
+	+ 1 hàm implements interface phải định nghĩa tất cả hàm interface hoặc ko nếu hàm đó là abstract
+- Một interface có thể kế thừa từ interface khác (class implement this interface might define all method) 
+- Từ JDK 8.0 , an interface có thể có default method 
+- Multiple Inheritance Issuses : 
+	+ Recall : Java ko hỗ trợ đa kế thừa 
+	+ Recall : key difference between a class and an interface : class can maintain state information and interface not
+	+ Về cơ bản là ko có Multiple inheritance 
+	+ Một số tình huống :Giả sử  MyClass implemented Alpha and Beta (interface)- cả 2 đều có defaul method reset()
+	1. Nếu không có override reset() -> compile error
+	2. Nếu MyClass override reset() -> this version will be used
+	3. Nếu Beta inherit Alpha , Beta's version will be used 
+	

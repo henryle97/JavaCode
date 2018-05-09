@@ -1,0 +1,44 @@
+- Exception là 1 object : have name and description abou exception
+- Có 2 lại exeption:
+	+ Checked : * la cac ngoai le ma checked at compile time: IOException,...
+				* all lớp extend từ Exception (trừ RuntimeException) 
+	+ Unchecked : * are exception that are not checked at compile time
+				  * RuntimeException && Error : vd ArithmeticException, 
+	
+- Catch phải được sắp xếp từ cụ thể đến chung nhất 
+- Keywords : try, catch, throw, throws, finally
+- Throwable : exception class
+- try ... catch : exception subclass must become before superclass
+- Nested Try : handle từ ngoai vao trong
+
+- Throw :  + Form : throw <ThrowableInstance>
+		   + obtain a throwable object: sử dụng 1 tham số trong catch clause hoặc tạo một object với new operator
+		   + Ném ra 1 exception 1 cách rõ ràng ( explicitly exception)
+		   + Ngoại lệ checked k được truyền ra nếu chỉ sử dung throw
+		   + Thường được sử dụng ném các ngoại lệ người dùng định nghĩa 
+- Throws :  - Dùng để KHAI BÁO ngoại lệ
+			- Sử dụng cho Checked exception
+			- Ngoại lệ checked  được truyền ra với THROW
+			
+- Finally : Luôn đươc xử lý dù có exception hay ko  (ngoại lệ nếu gọi System.exit() thì k thực thi).
+	+ Try...(catch | finally || catch + finally)
+	
+	
+	- EX:
+	  +-----------+
+		   | Throwable |
+                   +-----------+
+                    /         \
+		   /           \
+          +-------+          +-----------+
+          | Error |          | Exception |
+          +-------+          +-----------+
+	   /  |  \           / |        \
+         \________/	  \______/    	 \
+			                +------------------+
+	unchecked	 checked	| RuntimeException |
+					+------------------+
+					  /   |    |      \
+					 \_________________/
+					   
+					   unchecked

@@ -1,0 +1,6 @@
+- Một interface có variable
+	+ Không có bất cứ method nào
+	+ Variable -> Constant
+	
+--> The technique of using an interface to define shared constans, as just
+controversial (gay tranh cai). No duoc de cap o day chi nham tinh chat tim hieu 

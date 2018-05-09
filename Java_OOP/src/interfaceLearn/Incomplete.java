@@ -16,4 +16,10 @@ public abstract class Incomplete implements Callback{
 	 * hoặc là khởi tạo abstract
 	 */
 	abstract void callme();
+	
+	//Override default getString() of interface  Callback
+	public void getString()
+	{
+		System.out.println("Default String version 2");
+	}
 }
