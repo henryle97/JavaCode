@@ -36,11 +36,68 @@ public class SinhVienTest {
 	}
 	
 	public static void arangeSV()
-	{	try {
-			Arrays.sort(SVList, (a,b) -> a.getTongDiem() < b.getTongDiem() ? -1:a.getTongDiem() == b.getTongDiem() ? 0:1);
-		} catch (Exception e) {
-			System.out.println(e);
-		}
+	{	
+		// Sap xep noi bot  O(n^2)
+		for (int i = 0; i < numSV-1; i++)
+			for(int j = i+1; j < numSV; j++)
+			{
+				if (SVList[i].getTongDiem() > SVList[j].getTongDiem())
+				{
+					SinhVien temp = new SinhVien();
+					temp = SVList[i];
+					SVList[i] = SVList[j];
+					SVList[j] = temp;
+				}
+			}
+		
+		// Quick Sort
+	}
+	
+	/* Kiem tra da sap xep theo tongdiem */
+	static boolean checkOrder()
+	{
+		for (int i = 0; i < numSV-1; i++)
+			for(int j = i+1; j < numSV; j++)
+			{
+				if (SVList[i].getTongDiem() > SVList[j].getTongDiem())
+				{
+					return false;
+				}
+			}
+	
+		return true;
+	}
+	
+	static void editName()
+	{
+		Scanner in = new Scanner(System.in);
+		do {
+			System.out.print("Nhap MSSV can sua ten: ");
+			String studentID = in.nextLine();
+			
+			// Tim kiem sinh vien co ma nay
+			// C1: Tim kiem tuan tu 
+			int pos  = -1; //Vi tri cua SV
+			
+			for (int i = 0; i < numSV; i++)
+			{
+				if (SVList[i].getMaSV().equals(studentID))		// So sanh 2 string
+				{	
+					pos = i;
+					break;
+				}
+			}
+			if (pos == -1)
+				continue;
+			System.out.println("Tim thay SV co ma " + studentID + ": " + SVList[pos].getHoTen());
+			System.out.print("Nhap ten thay the: ");
+			String studenName = in.nextLine();
+			SVList[pos].setHoTen(studenName);
+			System.out.println("Chinh sua thanh cong");
+			return;
+			
+	} while(true);
+		
 	}
 	public static void main(String args[])
 	{
@@ -72,7 +129,8 @@ public class SinhVienTest {
 					break;
 			case 4:
 			case 5:
-			case 6:
+			case 6:	editName();
+					break;
 			case 7:
 			case 8:
 			case 0:
